@@ -31,12 +31,12 @@ def find_elements_in_list(chemicals):
 
 # find how many a element appears in a chemical
 # example: how many K in K2(SO4)3, answer: 2
-def how_many_times_elements_in_chemical(element, chemical):
+def number_of_occurrences_of_an_element_in_a_chemical(element, chemical):
     chemical += "~"
     # find all indexes of the element in the chemical
     indexes = [m.start() for m in re.finditer(element, chemical)]
 
-    # this line asserts that "Cl" not counted as "C", "Ni" not counted as "N", etc.
+    # those 2 lines asserts that "Cl" not counted as "C", "Ni" not counted as "N", etc.
     if len(element) == 1:
         indexes = [index for index in indexes if not chemical[index+1].islower()]
 
