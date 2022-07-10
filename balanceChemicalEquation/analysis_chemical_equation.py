@@ -19,15 +19,15 @@ def balance(reactants, products):
     # 1KMnO4 + aFeSO4 + bH2SO4 → cMnSO4 + dFe2(SO4)3 + eK2SO4 + fH2O
     # using the law of conservation of elements:
     # get:
-    # K : 1 = 2e
-    # Mn : 1 = c
-    # O : 4 + 4a + 4b = 4c + 12d + 4e + 
-    # Fe : a = 2d
-    # S : a + b = c + 3d + e
-    # H : 2b = 2f
+    # K :                    - 2e      = -1
+    # Mn:         - 1c                 = -1
+    # O : 4a + 4b - 4c - 12d - 4e - 1f = -4
+    # Fe: 1a           -  2d           = 0
+    # S : 1a + 1b - 1c -  3d - 1e      = 0
+    # H :      2b                 - 2f = 0
     numbers_of_unknowns = len(reactants) + len(products) - 1
+    
     A = []
-
     for element in chemical_elements_in_reactants:
         E = []
         for chemical in reactants[1:]:
