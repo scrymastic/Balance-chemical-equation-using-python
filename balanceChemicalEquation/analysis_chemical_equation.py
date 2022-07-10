@@ -17,7 +17,7 @@ def balance(reactants, products):
     # balance the equation: KMnO4 + FeSO4 + H2SO4 → MnSO4 + Fe2(SO4)3 + K2SO4 + H2O
     # assume:
     # 1KMnO4 + aFeSO4 + bH2SO4 → cMnSO4 + dFe2(SO4)3 + eK2SO4 + fH2O
-    # using law of conservation of elements:
+    # using the law of conservation of elements:
     # get:
     # K : 1 = 2e
     # Mn : 1 = c
