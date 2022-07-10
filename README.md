@@ -3,6 +3,6 @@ I have made a simple program to calculate the balance of any chemical equation (
 
 Go to run.py to try.
 
-If you discover any mistake in my repository, please feedback via xstech44@gmail.com
+If you discover any mistake in my repository, please feedback via xstech44@gmail.com.
 
 Hope you like it.
