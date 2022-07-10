@@ -13,6 +13,10 @@ def main():
             print("Bye!")
             quit()
         products = input("products: ")
+        if products == "/":
+            continuation = False
+            print("Bye!")
+            quit()
 
         print(balance(reactants, products))
 
