@@ -17,7 +17,7 @@ def balance(reactants, products):
     # balance the equation: KMnO4 + FeSO4 + H2SO4 → MnSO4 + Fe2(SO4)3 + K2SO4 + H2O
     # assume:
     # 1KMnO4 + aFeSO4 + bH2SO4 → cMnSO4 + dFe2(SO4)3 + eK2SO4 + fH2O
-    # using the law of conservation of elements:
+    # using law of conservation of elements:
     # get:
     # K :                    - 2e      = -1
     # Mn:         - 1c                 = -1
@@ -26,26 +26,27 @@ def balance(reactants, products):
     # S : 1a + 1b - 1c -  3d - 1e      = 0
     # H :      2b                 - 2f = 0
     numbers_of_unknowns = len(reactants) + len(products) - 1
-    
     A = []
+
     for element in chemical_elements_in_reactants:
         E = []
         for chemical in reactants[1:]:
-            E.append(how_many_times_elements_in_chemical(element, chemical))
+            E.append(number_of_occurrences_of_an_element_in_a_chemical(element, chemical))
         for chemical in products:
-            E.append(-how_many_times_elements_in_chemical(element, chemical))
+            E.append(-number_of_occurrences_of_an_element_in_a_chemical(element, chemical))
         A.append(E)
         if len(A) == numbers_of_unknowns:
             break
 
     Y = []
     for element in chemical_elements_in_reactants:
-        Y.append(-how_many_times_elements_in_chemical(element, reactants[0]))
+        Y.append(-number_of_occurrences_of_an_element_in_a_chemical(element, reactants[0]))
         if len(Y) == numbers_of_unknowns:
             break
 
 
     result = solve(A, Y)
+
     chemical_equation = reactants + products
     answer = ""
     for i in range(len(result)):
@@ -61,8 +62,6 @@ def balance(reactants, products):
         else:
             answer += " + "
     return answer
-
-
 
 
 
