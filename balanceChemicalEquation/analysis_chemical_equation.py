@@ -35,17 +35,18 @@ def balance(reactants, products):
         for chemical in products:
             E.append(-number_of_occurrences_of_an_element_in_a_chemical(element, chemical))
         A.append(E)
-        if len(A) == numbers_of_unknowns:
-            break
+
 
     Y = []
     for element in chemical_elements_in_reactants:
         Y.append(-number_of_occurrences_of_an_element_in_a_chemical(element, reactants[0]))
-        if len(Y) == numbers_of_unknowns:
-            break
 
 
-    result = solve(A, Y)
+    result = solve(A, Y, numbers_of_unknowns)
+    
+    if not result:
+        print("The chemical equation can not balanced.")
+        quit()
 
     chemical_equation = reactants + products
     answer = ""
