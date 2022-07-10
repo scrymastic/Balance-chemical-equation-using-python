@@ -15,9 +15,16 @@ def main():
 
     reactants = input("reactants: ")
     products = input("products: ")
-    
+
     print(balance(reactants, products))
+
+    # f = open("testcase.txt", "r")
+    # for line in f:
+    #     reactants = line.split(' - ')[0]
+    #     products = line.split(' - ')[1]
+    #     print(balance(reactants, products))
 
 if __name__ == "__main__":
     main()
+
 
