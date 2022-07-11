@@ -3,9 +3,13 @@ from elements_in import *
 from solve_simul_equation import solve
 
 
-def balance(reactants, products):
-    reactants = reactants.replace(" ","").split(",")
-    products = products.replace(" ","").split(",")
+def balance(chemical_equation):
+    chemical_equation = chemical_equation.replace(" ", "")
+    
+    reactants, products = chemical_equation.split("=")
+    reactants = reactants.split("+")
+    products = products.split("+")
+
     chemical_elements_in_reactants = find_elements_in_list(reactants)
     chemical_elements_in_products = find_elements_in_list(products)
 
@@ -63,6 +67,7 @@ def balance(reactants, products):
         else:
             answer += " + "
     return answer
+
 
 
 
