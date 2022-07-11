@@ -11,7 +11,8 @@ def main():
         if chemical_equation == "/":
             print("Bye!")
             quit()
-
+        
+        print("------->", end=" ")
         print(balance(chemical_equation))
 
     # f = open("testcase.txt", "r")
