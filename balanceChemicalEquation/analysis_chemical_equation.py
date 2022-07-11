@@ -5,7 +5,7 @@ from solve_simul_equation import solve
 
 def balance(chemical_equation):
     chemical_equation = chemical_equation.replace(" ", "")
-    
+
     reactants, products = chemical_equation.split("=")
     reactants = reactants.split("+")
     products = products.split("+")
@@ -15,7 +15,7 @@ def balance(chemical_equation):
 
     # compare the two lists
     if set(chemical_elements_in_reactants) != set(chemical_elements_in_products):
-        print("The chemical equation is not valid.")
+        print("The chemical equation cannot be balanced.")
         quit()
 
     # balance the equation: KMnO4 + FeSO4 + H2SO4 → MnSO4 + Fe2(SO4)3 + K2SO4 + H2O
@@ -49,7 +49,7 @@ def balance(chemical_equation):
     result = solve(A, Y, numbers_of_unknowns)
     
     if not result:
-        print("The chemical equation can not balanced.")
+        print("The chemical equation cannot be balanced.")
         quit()
 
     chemical_equation = reactants + products
@@ -67,7 +67,6 @@ def balance(chemical_equation):
         else:
             answer += " + "
     return answer
-
 
 
 
