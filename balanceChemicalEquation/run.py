@@ -16,6 +16,9 @@ def main():
 
     # f = open("testcase.txt", "r")
     # for line in f:
+    #     if line == "/":
+    #         print("Bye!")
+    #         quit()
     #     print(balance(line))
 
 print("This program will calculate the balance of a chemical equation.")
